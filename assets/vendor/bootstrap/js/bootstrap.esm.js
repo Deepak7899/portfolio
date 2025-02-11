@@ -1,20 +1,7 @@
-/*!
-  * Bootstrap v5.3.3 (https://getbootstrap.com/)
-  * Copyright 2011-2024 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
+
+
 import * as Popper from '@popperjs/core';
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap dom/data.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-/**
- * Constants
- */
 
 const elementMap = new Map();
 const Data = {
@@ -53,12 +40,7 @@ const Data = {
   }
 };
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/index.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
+
 
 const MAX_UID = 1000000;
 const MILLISECONDS_MULTIPLIER = 1000;
@@ -299,17 +281,7 @@ const getNextActiveElement = (list, activeElement, shouldGetNext, isCycleAllowed
   return list[Math.max(0, Math.min(index, listLength - 1))];
 };
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap dom/event-handler.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const namespaceRegex = /[^.]*(?=\..*)\.|.*/;
 const stripNameRegex = /\..*/;
@@ -521,12 +493,7 @@ function hydrateObj(obj, meta = {}) {
   return obj;
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap dom/manipulator.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
+
 
 function normalizeData(value) {
   if (value === 'true') {
@@ -578,17 +545,7 @@ const Manipulator = {
   }
 };
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/config.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Class definition
- */
 
 class Config {
   // Getters
@@ -631,17 +588,7 @@ class Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap base-component.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const VERSION = '5.3.3';
 
@@ -700,22 +647,14 @@ class BaseComponent extends Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap dom/selector-engine.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
+
 
 const getSelector = element => {
   let selector = element.getAttribute('data-bs-target');
   if (!selector || selector === '#') {
     let hrefAttribute = element.getAttribute('href');
 
-    // The only valid content that could double as a selector are IDs or classes,
-    // so everything starting with `#` or `.`. If a "real" URL is used as the selector,
-    // `document.querySelector` will rightfully complain it is invalid.
-    // See https://github.com/twbs/bootstrap/issues/32273
+
     if (!hrefAttribute || !hrefAttribute.includes('#') && !hrefAttribute.startsWith('.')) {
       return null;
     }
@@ -789,12 +728,6 @@ const SelectorEngine = {
   }
 };
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/component-functions.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
 const enableDismissTrigger = (component, method = 'hide') => {
   const clickEvent = `click.dismiss${component.EVENT_KEY}`;
@@ -814,17 +747,7 @@ const enableDismissTrigger = (component, method = 'hide') => {
   });
 };
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap alert.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$f = 'alert';
 const DATA_KEY$a = 'bs.alert';
@@ -889,17 +812,7 @@ enableDismissTrigger(Alert, 'close');
 
 defineJQueryPlugin(Alert);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap button.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$e = 'button';
 const DATA_KEY$9 = 'bs.button';
@@ -953,17 +866,7 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$5, event 
 
 defineJQueryPlugin(Button);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/swipe.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$d = 'swipe';
 const EVENT_KEY$9 = '.bs.swipe';
@@ -1073,17 +976,6 @@ class Swipe extends Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap carousel.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$c = 'carousel';
 const DATA_KEY$8 = 'bs.carousel';
@@ -1446,17 +1338,7 @@ EventHandler.on(window, EVENT_LOAD_DATA_API$3, () => {
 
 defineJQueryPlugin(Carousel);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap collapse.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$b = 'collapse';
 const DATA_KEY$7 = 'bs.collapse';
@@ -1680,17 +1562,7 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, functi
 
 defineJQueryPlugin(Collapse);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap dropdown.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$a = 'dropdown';
 const DATA_KEY$6 = 'bs.dropdown';
@@ -2048,17 +1920,7 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$3, SELECTOR_DATA_TOGGLE$3, functi
 
 defineJQueryPlugin(Dropdown);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/backdrop.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$9 = 'backdrop';
 const CLASS_NAME_FADE$4 = 'fade';
@@ -2172,17 +2034,7 @@ class Backdrop extends Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/focustrap.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$8 = 'focustrap';
 const DATA_KEY$5 = 'bs.focustrap';
@@ -2270,17 +2122,7 @@ class FocusTrap extends Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/scrollBar.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const SELECTOR_FIXED_CONTENT = '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top';
 const SELECTOR_STICKY_CONTENT = '.sticky-top';
@@ -2368,17 +2210,7 @@ class ScrollBarHelper {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap modal.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$7 = 'modal';
 const DATA_KEY$4 = 'bs.modal';
@@ -2673,17 +2505,6 @@ enableDismissTrigger(Modal);
 
 defineJQueryPlugin(Modal);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap offcanvas.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$6 = 'offcanvas';
 const DATA_KEY$3 = 'bs.offcanvas';
@@ -2904,12 +2725,7 @@ enableDismissTrigger(Offcanvas);
 
 defineJQueryPlugin(Offcanvas);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/sanitizer.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
+
 
 // js-docs-start allow-list
 const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
@@ -3000,17 +2816,6 @@ function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
   return createdDocument.body.innerHTML;
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap util/template-factory.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$5 = 'TemplateFactory';
 const Default$4 = {
@@ -3136,17 +2941,7 @@ class TemplateFactory extends Config {
   }
 }
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap tooltip.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$4 = 'tooltip';
 const DISALLOWED_ATTRIBUTES = new Set(['sanitize', 'allowList', 'sanitizeFn']);
@@ -3648,17 +3443,7 @@ class Tooltip extends BaseComponent {
 
 defineJQueryPlugin(Tooltip);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap popover.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$3 = 'popover';
 const SELECTOR_TITLE = '.popover-header';
@@ -3729,17 +3514,6 @@ class Popover extends Tooltip {
 
 defineJQueryPlugin(Popover);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap scrollspy.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME$2 = 'scrollspy';
 const DATA_KEY$2 = 'bs.scrollspy';
@@ -3989,17 +3763,7 @@ EventHandler.on(window, EVENT_LOAD_DATA_API$1, () => {
 
 defineJQueryPlugin(ScrollSpy);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap tab.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
 
-
-/**
- * Constants
- */
 
 const NAME$1 = 'tab';
 const DATA_KEY$1 = 'bs.tab';
@@ -4259,17 +4023,6 @@ EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
 
 defineJQueryPlugin(Tab);
 
-/**
- * --------------------------------------------------------------------------
- * Bootstrap toast.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
-
-
-/**
- * Constants
- */
 
 const NAME = 'toast';
 const DATA_KEY = 'bs.toast';
